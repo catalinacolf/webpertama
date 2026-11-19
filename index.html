@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arsip Digital, Peta Pelayaran 3D, Biografi, dan Kuis Interaktif 5 Ulama Besar Nusantara." />
+  <title>Pantheon Ulama Nusantara — Peta Pelayaran 3D &amp; Arsip Biografi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS Native -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+
+  <!-- Indikator Progres Baca Pelangi Emas-Turquoise -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       A. NAVIGATION BAR
+       ========================================================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg sticky-top classical-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#beranda">
+        <span class="brand-emblem" aria-hidden="true">
+          <i class="bi bi-compass-fill"></i>
+        </span>
+        <div class="brand-text">
+          <span class="brand-title">PANTHEON ULAMA</span>
+          <span class="brand-subtitle d-none d-sm-block">Arsip &amp; Peta Pelayaran 3D</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Buka menu navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link active" href="#beranda">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-map-pill" href="#peta-3d">
+              <i class="bi bi-globe-asia-australia me-1"></i>Peta 3D
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#profil">Biografi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#perjalanan">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#karya">Karya</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kontribusi">Kontribusi</a>
+          </li>
+          <li class="nav-item ms-lg-1">
+            <a class="nav-link nav-quiz-pill" href="#kuis">
+              <i class="bi bi-patch-question-fill me-1"></i>Kuis (20)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       B. HERO SECTION & 3D HALL OF SCHOLARS
+       ========================================================= -->
+  <header id="beranda" class="hero-sanctuary position-relative overflow-hidden">
+    <div class="classical-pillar pillar-left d-none d-xl-block" aria-hidden="true"></div>
+    <div class="classical-pillar pillar-right d-none d-xl-block" aria-hidden="true"></div>
+
+    <!-- Dekorasi Cahaya Colorful Halus di Background -->
+    <div class="hero-aurora aurora-1" aria-hidden="true"></div>
+    <div class="hero-aurora aurora-2" aria-hidden="true"></div>
+
+    <div class="container position-relative z-2 py-5">
+      <div class="text-center mx-auto mb-5 hero-intro">
+        <div class="classical-overline mb-2">
+          <span>JARINGAN ULAMA NUSANTARA &bull; ABAD XVII – XX</span>
+        </div>
+        <h1 class="display-5 hero-main-heading mb-3">
+          Pilar Keilmuan &amp; Pelayaran Ulama Nusantara
+        </h1>
+        <p class="lead text-secondary mx-auto" style="max-width: 740px;">
+          Jelajahi jejak pengembaraan intelektual lima mahaguru ulama Nusantara melintasi samudra menuju Haramain hingga Tanjung Harapan melalui peta pelayaran 3D interaktif dan arsip biografi lengkap.
+        </p>
+      </div>
+
+      <!-- 3D Pedestal Selector: 5 Ulama Colorful -->
+      <div class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-1">
+          <span class="small text-uppercase fw-bold tracking-wide text-gold">
+            <i class="bi bi-hand-index-thumb me-1"></i> Pilih Pilar Tokoh (Arahkan Kursor &amp; Klik)
+          </span>
+          <span class="small text-muted d-none d-md-inline">Setiap tokoh memiliki warna jalur &amp; animasi kapal tersendiri</span>
+        </div>
+        <div id="scholar-selector-grid" class="row g-3 justify-content-center">
+          <!-- Dirender otomatis oleh JavaScript -->
+        </div>
+      </div>
+
+      <!-- Featured Scholar Hero Spotlight -->
+      <div class="hero-monument-card p-4 p-lg-5" id="hero-spotlight-card">
+        <div class="pediment-crown" aria-hidden="true"></div>
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-4 text-center">
+            <div class="classical-frame-3d mx-auto" id="hero-portrait-3d">
+              <div class="frame-inner-depth">
+                <img id="hero-scholar-img" src="img/nawawi.jpeg" alt="Potret Syekh Nawawi Al-Bantani" class="scholar-photo" />
+                <div id="hero-scholar-fallback" class="scholar-crest-placeholder d-none"></div>
+                <div class="frame-plaque mt-3">
+                  <span id="hero-scholar-years" class="plaque-years">1813 – 1897 M</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="d-inline-flex align-items-center gap-2 badge-classical mb-3" id="hero-region-badge">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span id="hero-scholar-region">Tanara, Kesultanan Banten</span>
+            </div>
+            <h2 id="hero-scholar-name" class="hero-scholar-title mb-2">
+              Syekh Nawawi Al-Bantani
+            </h2>
+            <p id="hero-scholar-epithet" class="hero-scholar-subtitle mb-3">
+              Sayyid Ulama Al-Hijaz &bull; Mahaguru Ulama Nusantara di Mekkah
+            </p>
+            <div class="classical-divider-left mb-3"></div>
+            <p id="hero-scholar-desc" class="hero-scholar-summary mb-4">
+              Ulama produktif asal Banten yang diakui sebagai pemimpin para ulama di Hijaz (Mekkah) pada abad ke-19. Melalui lebih dari seratus karya tulis berbahasa Arab di bidang tafsir, fiqih, tauhid, dan tasawuf, beliau membentuk fondasi kurikulum keilmuan pesantren di seluruh Nusantara.
+            </p>
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <a href="#peta-3d" class="btn btn-classical-primary px-4 py-2">
+                <i class="bi bi-compass me-2"></i>
+                <span>Lihat Rute Pelayaran 3D</span>
+              </a>
+              <a href="#profil" class="btn btn-classical-outline px-4 py-2">
+                <span>Baca Biografi Lengkap</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       NEW SECTION: PETA PELAYARAN 3D & SLIDE VISUAL INTERAKTIF
+       ========================================================= -->
+  <section id="peta-3d" class="py-5 section-ocean-atlas position-relative overflow-hidden">
+    <div class="container py-lg-4">
+      <div class="section-header text-center mb-4 reveal-3d">
+        <span class="section-kicker text-gold-bright">KARTOGRAFI SEJARAH &bull; VISUALISASI INTERAKTIF</span>
+        <h2 class="section-title text-white">Peta Pelayaran 3D Ulama Nusantara</h2>
+        <p class="text-light opacity-75 mx-auto mt-2" style="max-width: 700px;">
+          Arahkan kursor ke atas peta untuk merasakan efek kedalaman 3D, klik <strong>pin kota</strong> untuk membuka detail peristiwa, atau jalankan <strong>slide pelayaran</strong> untuk melihat kapal berlayar mengikuti jejak ulama!
+        </p>
+        <div class="classical-divider mx-auto"></div>
+      </div>
+
+      <!-- Kontrol Filter Rute di Atas Peta -->
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 mb-4" id="map-filter-controls">
+        <button type="button" class="btn btn-map-mode active" data-map-mode="single" id="btn-mode-single">
+          <i class="bi bi-tsunami me-1"></i> Jelajah Kapal (<span id="map-current-scholar-label">Syekh Nawawi</span>)
+        </button>
+        <button type="button" class="btn btn-map-mode" data-map-mode="all" id="btn-mode-all">
+          <i class="bi bi-diagram-3-fill me-1"></i> Tampilkan Semua Rute (5 Ulama)
+        </button>
+      </div>
+
+      <!-- Legenda Warna 5 Ulama (Saat Mode Semua Rute atau Cepat Ganti) -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="map-legend-bar">
+        <!-- Dirender oleh JS -->
+      </div>
+
+      <!-- PANGGUNG PETA 3D INTERAKTIF -->
+      <div class="atlas-3d-perspective mx-auto mb-4" id="atlas-3d-wrapper">
+        <div class="atlas-3d-board" id="atlas-3d-board">
+          <!-- Layer Kedalaman 1: Bingkai Emas & Kompas -->
+          <div class="atlas-corner-ornament top-left" aria-hidden="true"></div>
+          <div class="atlas-corner-ornament top-right" aria-hidden="true"></div>
+          <div class="atlas-corner-ornament bottom-left" aria-hidden="true"></div>
+          <div class="atlas-corner-ornament bottom-right" aria-hidden="true"></div>
+
+          <!-- Tooltip Melayang saat Hover Pin Kota -->
+          <div id="map-hover-tooltip" class="map-hover-tooltip d-none" role="status">
+            <span class="tooltip-city fw-bold d-block">Nama Kota</span>
+            <span class="tooltip-hint small">Klik untuk detail peristiwa</span>
+          </div>
+
+          <!-- SVG PETA DUNIA & RUTE PELAYARAN -->
+          <svg id="voyage-svg-map" viewBox="0 0 1000 500" class="w-100 h-auto d-block" role="img" aria-label="Peta 3D Rute Perjalanan Ulama Nusantara">
+            <defs>
+              <!-- Gradasi Lautan Samudra Hindia -->
+              <radialGradient id="oceanGrad" cx="50%" cy="45%" r="65%">
+                <stop offset="0%" stop-color="#156b8a" />
+                <stop offset="55%" stop-color="#0e4b66" />
+                <stop offset="100%" stop-color="#082e42" />
+              </radialGradient>
+
+              <!-- Pola Garis Lintang & Bujur Kartografi -->
+              <pattern id="gridLines" width="50" height="50" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1" />
+              </pattern>
+
+              <!-- Efek Cahaya Glow untuk Jalur & Pin -->
+              <filter id="glowEffect" x="-25%" y="-25%" width="150%" height="150%">
+                <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <!-- Gradasi Daratan Colorful -->
+              <linearGradient id="africaLand" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e08e45" />
+                <stop offset="100%" stop-color="#b85d28" />
+              </linearGradient>
+              <linearGradient id="arabiaLand" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f2c15a" />
+                <stop offset="100%" stop-color="#c98e27" />
+              </linearGradient>
+              <linearGradient id="indiaLand" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d96b78" />
+                <stop offset="100%" stop-color="#a83d4b" />
+              </linearGradient>
+              <linearGradient id="nusantaraLand" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2bb673" />
+                <stop offset="100%" stop-color="#147a4d" />
+              </linearGradient>
+            </defs>
+
+            <!-- Latar Samudra -->
+            <rect width="1000" height="500" fill="url(#oceanGrad)" />
+            <rect width="1000" height="500" fill="url(#gridLines)" />
+
+            <!-- Gelombang Laut Animasi Dekoratif -->
+            <g class="ocean-waves" stroke="rgba(130, 224, 255, 0.22)" stroke-width="1.6" fill="none" stroke-linecap="round">
+              <path d="M 190 310 Q 210 302 230 310 T 270 310" />
+              <path d="M 410 340 Q 435 330 460 340 T 510 340" />
+              <path d="M 440 210 Q 460 202 480 210 T 520 210" />
+              <path d="M 610 390 Q 635 380 660 390 T 710 390" />
+              <path d="M 790 250 Q 815 240 840 250 T 890 250" />
+            </g>
+
+            <!-- Mawar Kompas Klasik 3D di Pojok Kiri Atas Peta -->
+            <g transform="translate(82, 85)" class="compass-rose-spin">
+              <circle cx="0" cy="0" r="36" fill="rgba(8,46,66,0.65)" stroke="#cfa855" stroke-width="1.5" />
+              <circle cx="0" cy="0" r="28" fill="none" stroke="rgba(207,168,85,0.45)" stroke-dasharray="3 3" />
+              <polygon points="0,-32 6,-6 32,0 6,6 0,32 -6,6 -32,0 -6,-6" fill="#f2c15a" />
+              <polygon points="0,-22 4,-4 22,0 4,4 0,22 -4,4 -22,0 -4,-4" fill="#ffffff" transform="rotate(45)" />
+              <text x="0" y="-39" text-anchor="middle" fill="#f2c15a" font-size="9" font-family="Cinzel, serif" font-weight="700">U</text>
+            </g>
+
+            <!-- SILUET BENUA & KEPULAUAN (STYLIZED COLORFUL CARTOGRAPHY) -->
+            <!-- 1. Afrika Timur & Tanjung Harapan (Cape Town) -->
+            <path d="M 40,150 L 185,165 L 235,235 L 210,325 L 165,435 L 115,442 L 85,355 L 40,290 Z" fill="url(#africaLand)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" />
+            <text x="125" y="295" fill="rgba(255,255,255,0.75)" font-size="11" font-family="Cinzel, serif" font-weight="700" letter-spacing="2">AFRIKA</text>
+
+            <!-- 2. Jazirah Arab & Syam (Damaskus, Madinah, Mekkah, Yaman) -->
+            <path d="M 255,85 L 345,85 L 415,155 L 425,220 L 345,255 L 295,215 L 265,140 Z" fill="url(#arabiaLand)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
+            <text x="335" y="152" text-anchor="middle" fill="#3a2504" font-size="10" font-family="Cinzel, serif" font-weight="800" letter-spacing="1.5">HIJAZ &amp; SYAM</text>
+
+            <!-- 3. Anak Benua India & Sri Lanka -->
+            <path d="M 475,95 L 585,105 L 555,235 L 520,260 L 485,205 Z" fill="url(#indiaLand)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" />
+            <!-- Pulau Sri Lanka (Ceylon) -->
+            <ellipse cx="548" cy="288" rx="13" ry="18" fill="#ff758f" stroke="#ffffff" stroke-width="1.5" />
+
+            <!-- 4. Kepulauan Nusantara (Sumatera, Jawa, Kalimantan, Sulawesi) -->
+            <g fill="url(#nusantaraLand)" stroke="rgba(255,255,255,0.45)" stroke-width="1.5">
+              <!-- Sumatera -->
+              <path d="M 645,245 L 675,245 L 745,335 L 725,355 L 650,275 Z" />
+              <!-- Jawa -->
+              <path d="M 745,365 L 845,375 L 842,392 L 742,382 Z" />
+              <!-- Kalimantan -->
+              <path d="M 765,255 L 835,250 L 845,315 L 775,320 Z" />
+              <!-- Sulawesi -->
+              <path d="M 858,285 L 892,285 L 882,325 L 895,358 L 860,365 L 855,320 Z" />
+            </g>
+            <text x="805" y="236" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="Cinzel, serif" font-weight="700" letter-spacing="2">NUSANTARA</text>
+
+            <!-- Label Samudra -->
+            <text x="415" y="385" text-anchor="middle" fill="rgba(186, 230, 253, 0.35)" font-size="14" font-family="Cinzel, serif" letter-spacing="5">SAMUDRA HINDIA</text>
+
+            <!-- LAYER JALUR RUTE PELAYARAN (Dirender Dinamis oleh JS) -->
+            <g id="map-routes-layer" filter="url(#glowEffect)"></g>
+
+            <!-- LAYER PIN KOTA INTERAKTIF (Dirender Dinamis oleh JS) -->
+            <g id="map-pins-layer"></g>
+
+            <!-- KAPAL LAYAR KLASIK SVG ANIMASI (Berlayar mengikuti slide aktif) -->
+            <g id="voyage-ship-group" transform="translate(755, 365)" class="voyage-ship-transition">
+              <g class="ship-bobbing-anim">
+                <!-- Lingkaran Cahaya Bawah Kapal -->
+                <ellipse cx="0" cy="14" rx="26" ry="7" fill="rgba(255, 224, 130, 0.35)" />
+                <!-- Riak Air di Bawah Lambung -->
+                <path d="M -24,11 Q -12,15 0,11 T 24,11" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                <!-- Lambung Kapal Klasik -->
+                <path d="M -20,2 L 20,2 L 14,11 L -14,11 Z" fill="#8c3b19" stroke="#ffd166" stroke-width="1.5" />
+                <!-- Tiang Layar -->
+                <line x1="-2" y1="2" x2="-2" y2="-24" stroke="#ffd166" stroke-width="2" />
+                <line x1="9" y1="2" x2="9" y2="-17" stroke="#ffd166" stroke-width="1.6" />
+                <!-- Layar Utama Mengembang -->
+                <path d="M -2,-22 Q 12,-11 -2,-2 Z" fill="#fff8e7" stroke="#e5a93c" stroke-width="1" />
+                <!-- Layar Depan -->
+                <path d="M 9,-15 Q 19,-7 9,0 Z" fill="#ffd166" />
+                <!-- Bendera Puncak -->
+                <polygon points="-2,-24 6,-21 -2,-18" fill="#ef476f" />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- SLIDE VISUAL PERJALANAN (MEMPERMUDAH PEMBACA MENANGKAP CERITA) -->
+      <div id="voyage-slides-panel" class="voyage-slide-card mx-auto p-4 p-md-5" style="max-width: 960px;">
+        <div class="row align-items-center g-4">
+          <!-- Visual Grafis SVG Spesifik Tahap Perjalanan -->
+          <div class="col-md-4 text-center">
+            <div class="slide-illustration-box mx-auto" id="slide-svg-illustration">
+              <!-- Ilustrasi SVG khusus tiap slide dirender oleh JS -->
+            </div>
+          </div>
+
+          <!-- Konten Penjelasan Slide -->
+          <div class="col-md-8">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+              <span class="badge rounded-pill px-3 py-1 fw-bold" id="slide-step-badge" style="background-color: #1c4b3b; color: #ffd166;">
+                TAHAP 1 DARI 4 &bull; BANTEN
+              </span>
+              <span class="small fw-semibold text-muted" id="slide-route-direction">
+                <i class="bi bi-signpost-2-fill text-gold me-1"></i> Titik Awal Keberangkatan
+              </span>
+            </div>
+
+            <h3 id="slide-title" class="h4 fw-bold mb-2">
+              Masa Kecil &amp; Pendidikan di Tanara, Banten
+            </h3>
+            <p id="slide-summary" class="text-secondary mb-3">
+              Ringkasan perjalanan pada tahap ini akan muncul di sini.
+            </p>
+
+            <!-- Tombol Interaksi Slide & Pop-up Detail -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 pt-3 border-top">
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" id="btn-prev-slide" class="btn btn-classical-outline btn-sm px-3 py-2">
+                  <i class="bi bi-chevron-left me-1"></i> Sebelumnya
+                </button>
+                <button type="button" id="btn-next-slide" class="btn btn-classical-primary btn-sm px-3 py-2">
+                  <span>Berlayar Lanjut</span>
+                  <i class="bi bi-chevron-right ms-1"></i>
+                </button>
+              </div>
+
+              <button type="button" id="btn-open-stop-popup" class="btn btn-sm btn-vibrant-popup px-3 py-2">
+                <i class="bi bi-window-stack me-1"></i> Buka Pop-up Detail Kota
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indikator Dots Slide -->
+        <div class="d-flex justify-content-center gap-2 mt-4" id="slide-dots-container">
+          <!-- Dots dirender otomatis oleh JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Indikator Tokoh Aktif saat Scroll -->
+  <div class="active-banner-strip py-2 border-top border-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small">
+        <span class="text-muted">Arsip Sedang Dibaca:</span>
+        <strong id="active-scholar-indicator" class="text-emerald ms-1">Syekh Nawawi Al-Bantani</strong>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#peta-3d" class="small text-decoration-none text-primary fw-semibold">
+          <i class="bi bi-compass me-1"></i>Peta 3D
+        </a>
+        <a href="#kuis" class="small text-decoration-none text-emerald fw-semibold">
+          <i class="bi bi-patch-question me-1"></i>Kuis
+        </a>
+        <a href="#beranda" class="small text-decoration-none text-gold fw-semibold">
+          <i class="bi bi-arrow-up-circle me-1"></i>Ganti Tokoh
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       DYNAMIC ARCHIVE STAGE
+       ========================================================= -->
+  <main id="archive-dynamic-stage">
+
+    <!-- C. PROFIL SINGKAT -->
+    <section id="profil" class="py-5 section-marble">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN I &bull; IDENTITAS HISTORIS</span>
+          <h2 class="section-title">Profil Singkat Tokoh</h2>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div id="profil-grid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- D. BIOGRAFI DAN PERJALANAN HIDUP (TIMELINE) -->
+    <section id="perjalanan" class="py-5 section-travertine">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN II &bull; KRONOLOGI SEJARAH</span>
+          <h2 class="section-title">Biografi &amp; Perjalanan Hidup</h2>
+          <p class="text-secondary mx-auto mt-2" style="max-width: 650px;">
+            Rekam jejak intelektual, pengembaraan menuntut ilmu, hingga perjuangan dakwah berdasarkan catatan historiografi Islam.
+          </p>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div class="classical-timeline" id="timeline-container"></div>
+      </div>
+    </section>
+
+    <!-- E. KARYA DAN PEMIKIRAN -->
+    <section id="karya" class="py-5 section-marble">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN III &bull; WARISAN INTELEKTUAL</span>
+          <h2 class="section-title">Karya &amp; Pemikiran</h2>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-6">
+            <div class="archive-panel p-4 p-lg-4 reveal-3d">
+              <h3 class="panel-heading mb-4">
+                <i class="bi bi-journal-bookmark-fill text-gold me-2"></i>
+                Karya-Karya Monumental
+              </h3>
+              <div id="karya-list" class="d-flex flex-column gap-3"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div id="pemikiran-content" class="d-flex flex-column gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- F. KONTRIBUSI DAN PENGARUH -->
+    <section id="kontribusi" class="py-5 section-travertine">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN IV &bull; DAMPAK PERADABAN</span>
+          <h2 class="section-title">Kontribusi &amp; Pengaruh</h2>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div id="kontribusi-grid" class="row g-4 justify-content-center"></div>
+      </div>
+    </section>
+
+    <!-- G. NILAI KETELADANAN -->
+    <section id="keteladanan" class="py-5 section-marble">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN V &bull; REFLEKSI EDUKATIF</span>
+          <h2 class="section-title">Nilai Keteladanan</h2>
+          <p class="text-secondary mx-auto mt-2" style="max-width: 640px;">
+            Pelajaran karakter dan etos keilmuan yang dapat diteladani generasi muda dari perjalanan hidup beliau.
+          </p>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div id="keteladanan-grid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- H. REFERENSI DAN SUMBER INFORMASI -->
+    <section id="referensi" class="py-5 section-travertine border-top">
+      <div class="container py-lg-4">
+        <div class="section-header text-center mb-5 reveal-3d">
+          <span class="section-kicker">BAGIAN VI &bull; VALIDITAS HISTORIS</span>
+          <h2 class="section-title">Referensi &amp; Sumber Informasi</h2>
+          <p class="text-secondary mx-auto mt-2" style="max-width: 680px;">
+            Seluruh data historis pada halaman ini disusun merujuk pada literatur sejarah Islam Nusantara dan kajian akademik terverifikasi.
+          </p>
+          <div class="classical-divider mx-auto"></div>
+        </div>
+
+        <div class="archive-panel p-4 p-lg-5 reveal-3d">
+          <ol id="referensi-list" class="bibliography-list mb-0"></ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       J. ARENA UJI WAWASAN (KUIS INTERAKTIF 20 SOAL)
+       ========================================================= -->
+  <section id="kuis" class="py-5 section-marble border-top">
+    <div class="container py-lg-4">
+      <div class="section-header text-center mb-5 reveal-3d">
+        <span class="section-kicker">BAGIAN VII &bull; EVALUASI PEMBELAJARAN</span>
+        <h2 class="section-title">Arena Uji Wawasan Ulama Nusantara</h2>
+        <p class="text-secondary mx-auto mt-2" style="max-width: 670px;">
+          Uji pemahamanmu mengenai biografi, karya intelektual, dan kontribusi kelima ulama Nusantara melalui 20 soal interaktif berbasis materi arsip di atas.
+        </p>
+        <div class="classical-divider mx-auto"></div>
+      </div>
+
+      <div class="quiz-sanctuary-wrapper mx-auto" style="max-width: 860px;">
+        <div class="quiz-monument-card p-4 p-md-5 position-relative" id="quiz-card-stage">
+          <div class="pediment-crown" aria-hidden="true"></div>
+
+          <!-- 1. LAYAR PEMBUKA KUIS -->
+          <div id="quiz-start-screen" class="text-center py-2">
+            <div class="quiz-emblem-circle mx-auto mb-3">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-2">Siap Menguji Pemahaman Sejarahmu?</h3>
+            <p class="text-secondary mx-auto mb-4" style="max-width: 580px;">
+              Kuis ini terdiri dari <strong>20 soal pilihan ganda</strong> yang mencakup seluruh materi biografi Syekh Nawawi Al-Bantani, Syekh Yusuf Al-Makassari, Syekh Abdus Samad Al-Palimbani, Syekh Abdurrauf As-Singkili, dan Syekh Ahmad Khatib Al-Minangkabawi.
+            </p>
+
+            <div class="row g-3 justify-content-center mb-4 text-start" style="max-width: 620px; margin: 0 auto;">
+              <div class="col-sm-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-gold fw-bold">JUMLAH SOAL</span>
+                  <span class="fw-bold fs-5">20 Butir</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-gold fw-bold">CAKUPAN</span>
+                  <span class="fw-bold fs-5">5 Ulama</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-gold fw-bold">PEMBAHASAN</span>
+                  <span class="fw-bold fs-5">Instan</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check form-switch d-inline-flex align-items-center gap-2 mb-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="quiz-shuffle-toggle" checked />
+              <label class="form-check-label small fw-semibold text-secondary" for="quiz-shuffle-toggle">
+                Acak urutan soal setiap kali mulai
+              </label>
+            </div>
+
+            <div>
+              <button type="button" id="btn-start-quiz" class="btn btn-classical-primary px-5 py-2.5">
+                <i class="bi bi-play-fill me-1"></i> Mulai Uji Wawasan
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. LAYAR PENGERJAAN SOAL -->
+          <div id="quiz-play-screen" class="d-none">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+              <span class="badge-classical" id="quiz-progress-label">Soal 1 dari 20</span>
+              <span class="small fw-bold text-emerald">
+                <i class="bi bi-check-circle-fill text-gold me-1"></i>
+                Benar: <span id="quiz-live-correct">0</span>
+              </span>
+            </div>
+
+            <div class="progress quiz-progress-track mb-4" role="progressbar" aria-label="Progres kuis" aria-valuemin="0" aria-valuemax="100">
+              <div id="quiz-progress-bar" class="progress-bar" style="width: 5%"></div>
+            </div>
+
+            <div class="mb-4">
+              <span id="quiz-topic-tag" class="d-inline-block small fw-bold text-uppercase text-gold mb-2">
+                KATEGORI: ARSIP BIOGRAFI
+              </span>
+              <h3 id="quiz-question-text" class="quiz-question-heading">
+                Pertanyaan akan dimuat di sini...
+              </h3>
+            </div>
+
+            <div id="quiz-options-container" class="d-flex flex-column gap-3 mb-4"></div>
+
+            <div id="quiz-feedback-box" class="quiz-feedback-panel d-none mb-4">
+              <div class="d-flex align-items-start gap-2">
+                <i id="quiz-feedback-icon" class="bi bi-info-circle-fill fs-5 mt-0.5"></i>
+                <div>
+                  <strong id="quiz-feedback-status" class="d-block mb-1">Keterangan Jawaban</strong>
+                  <p id="quiz-feedback-explanation" class="small mb-0 text-secondary"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <button type="button" id="btn-quit-quiz" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Kuis
+              </button>
+              <button type="button" id="btn-next-question" class="btn btn-classical-primary px-4 py-2" disabled>
+                <span>Soal Berikutnya</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. LAYAR HASIL AKHIR -->
+          <div id="quiz-result-screen" class="d-none text-center">
+            <div class="quiz-emblem-circle mx-auto mb-3">
+              <i class="bi bi-trophy-fill"></i>
+            </div>
+            <span class="section-kicker">HASIL EVALUASI ARSIP</span>
+            <h3 id="quiz-rank-title" class="h3 fw-bold mb-1">Cendekiawan Arsip Nusantara</h3>
+            <p id="quiz-rank-desc" class="text-secondary small mx-auto mb-4" style="max-width: 540px;"></p>
+
+            <div class="quiz-score-medallion mx-auto mb-4">
+              <span class="score-value" id="quiz-final-score">100</span>
+              <span class="score-label">SKOR AKHIR</span>
+            </div>
+
+            <div class="row g-3 justify-content-center mb-4" style="max-width: 520px; margin: 0 auto;">
+              <div class="col-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-muted">TOTAL</span>
+                  <strong class="fs-5">20</strong>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-success fw-bold">BENAR</span>
+                  <strong class="fs-5 text-success" id="quiz-final-correct">0</strong>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="quiz-stat-box">
+                  <span class="d-block small text-danger fw-bold">SALAH</span>
+                  <strong class="fs-5 text-danger" id="quiz-final-wrong">0</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+              <button type="button" id="btn-retry-quiz" class="btn btn-classical-primary px-4 py-2">
+                <i class="bi bi-arrow-repeat me-1"></i> Ulangi Kuis
+              </button>
+              <button type="button" id="btn-toggle-review" class="btn btn-classical-outline px-4 py-2">
+                <i class="bi bi-list-check me-1"></i> Lihat Rekap 20 Jawaban
+              </button>
+            </div>
+
+            <div id="quiz-review-container" class="d-none text-start mt-4 pt-4 border-top">
+              <h4 class="panel-heading mb-3">Rekap Evaluasi 20 Soal</h4>
+              <div id="quiz-review-list" class="d-flex flex-column gap-3"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       POP-UP MODAL 3D UNTUK DETAIL KOTA PADA PETA PELAYARAN
+       ========================================================= -->
+  <div class="modal fade" id="voyageStopModal" tabindex="-1" aria-labelledby="voyageModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content classical-popup-3d border-0">
+        <div class="modal-header border-bottom-0 pb-0">
+          <span class="badge rounded-pill px-3 py-1 fw-bold" id="voyageModalScholarBadge">Syekh Yusuf Al-Makassari</span>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Tutup pop-up"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5 pt-3">
+          <div class="row align-items-center g-4">
+            <div class="col-md-4 text-center">
+              <div class="popup-svg-showcase mx-auto" id="voyageModalSvgBox">
+                <!-- Ilustrasi SVG Kota/Peristiwa -->
+              </div>
+              <span class="d-inline-block mt-2 small fw-bold text-gold" id="voyageModalEra">1644 – 1664 M</span>
+            </div>
+            <div class="col-md-8">
+              <div class="small text-uppercase fw-bold text-muted mb-1" id="voyageModalLocation">
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i> Lokasi Pelabuhan
+              </div>
+              <h3 class="h4 fw-bold mb-3" id="voyageModalTitle">Judul Peristiwa</h3>
+              <p class="text-secondary mb-3" id="voyageModalDetail">
+                Penjelasan detail mengenai perjalanan ulama di kota ini.
+              </p>
+              <div class="p-3 rounded-3 small" style="background-color: #f6f3ea; border-left: 4px solid #cfa855;">
+                <strong class="d-block text-emerald mb-1"><i class="bi bi-stars me-1"></i> Signifikansi Sejarah:</strong>
+                <span id="voyageModalSignificance" class="text-secondary">Dampak penting dari persinggahan ini.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top-0 pt-0 px-4 pb-4">
+          <button type="button" class="btn btn-classical-primary px-4" data-bs-dismiss="modal">Tutup Pop-up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       I. FOOTER
+       ========================================================= -->
+  <footer class="classical-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-emblem footer-emblem"><i class="bi bi-compass-fill"></i></span>
+            <span class="brand-title text-white">PANTHEON ULAMA NUSANTARA</span>
+          </div>
+          <p class="text-light opacity-75 small pe-lg-4">
+            Media pembelajaran digital berbasis arsip sejarah dan kartografi pelayaran 3D yang menyajikan biografi, karya intelektual, serta kontribusi ulama besar Nusantara.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h3 class="footer-heading mb-3">Navigasi Arsip</h3>
+          <ul class="list-unstyled footer-links small">
+            <li><a href="#beranda">Beranda &amp; Pilihan Tokoh</a></li>
+            <li><a href="#peta-3d">Peta Pelayaran 3D</a></li>
+            <li><a href="#profil">Profil Singkat</a></li>
+            <li><a href="#perjalanan">Perjalanan Hidup</a></li>
+            <li><a href="#karya">Karya dan Pemikiran</a></li>
+            <li><a href="#kuis">Kuis Interaktif (20 Soal)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h3 class="footer-heading mb-3">Rujukan Utama &amp; Proyek</h3>
+          <p class="small text-light opacity-75 mb-2">
+            Sumber Historiografi: <em>Jaringan Ulama Timur Tengah dan Kepulauan Nusantara Abad XVII &amp; XVIII</em> (Prof. Azyumardi Azra) &amp; literatur sejarah Islam Indonesia.
+          </p>
+          <div class="footer-badge mt-3 p-2 rounded small">
+            <i class="bi bi-code-slash text-gold me-1"></i>
+            Proyek Tugas Sekolah — Jurusan Rekayasa Perangkat Lunak (RPL)
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3 small text-light opacity-75">
+        <span>&copy; 2026 Arsip Digital Ulama Nusantara. Disusun untuk tujuan edukasi.</span>
+        <span class="mt-2 mt-sm-0">Dibangun dengan HTML5, CSS3 3D, SVG Kartografi, Bootstrap 5 &amp; Vanilla JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Custom Vanilla JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

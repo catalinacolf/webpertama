@@ -1,0 +1,1247 @@
+/* ==========================================================================
+   PANTHEON ULAMA NUSANTARA — COLORFUL CLASSICAL 3D ARCHITECTURAL STYLESHEET
+   ========================================================================== */
+
+:root {
+  --bg-marble: #f8f6f1;
+  --bg-travertine: #f0ece1;
+  --bg-card: #ffffff;
+  --bg-dark-temple: #122429;
+
+  --ink-primary: #182326;
+  --ink-secondary: #48565a;
+  --ink-muted: #68777b;
+
+  /* Palet Colorful Jewel Tones */
+  --accent-gold: #b88628;
+  --accent-gold-bright: #ffd166;
+  --accent-gold-soft: rgba(230, 179, 62, 0.16);
+  --accent-emerald: #136f53;
+  --accent-emerald-dark: #0c4735;
+  --accent-sapphire: #1565c0;
+  --accent-coral: #d9534f;
+  --accent-amethyst: #6f42c1;
+  --accent-amber: #e67e22;
+
+  --border-stone: rgba(184, 134, 40, 0.32);
+  --shadow-relief: 0 14px 34px rgba(18, 36, 41, 0.09), 0 3px 8px rgba(18, 36, 41, 0.04);
+  --shadow-3d-hover: 0 24px 48px rgba(18, 36, 41, 0.18), 0 0 0 2px rgba(255, 209, 102, 0.65);
+
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   BASE & TYPOGRAPHY
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-marble);
+  color: var(--ink-primary);
+  line-height: 1.72;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(21, 101, 192, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 25%, rgba(217, 83, 79, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(19, 111, 83, 0.05) 0%, transparent 50%);
+}
+
+h1, h2, h3, .brand-title, .section-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+.text-gold { color: var(--accent-gold) !important; }
+.text-gold-bright { color: var(--accent-gold-bright) !important; }
+.text-emerald { color: var(--accent-emerald) !important; }
+.tracking-wide { letter-spacing: 0.12em; }
+
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #136f53, #1565c0, #6f42c1, #d9534f, #ffd166);
+  z-index: 1080;
+  transition: width 0.1s ease-out;
+}
+
+/* ==========================================================================
+   A. NAVIGATION BAR
+   ========================================================================== */
+.classical-navbar {
+  background-color: rgba(248, 246, 241, 0.93);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-stone);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0;
+}
+
+.brand-emblem {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #136f53, #1565c0);
+  color: var(--accent-gold-bright);
+  border: 1.5px solid var(--accent-gold-bright);
+  border-radius: 8px;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.25);
+}
+
+.brand-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.classical-navbar .nav-link {
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.classical-navbar .nav-link:hover,
+.classical-navbar .nav-link.active {
+  color: var(--accent-emerald);
+  background-color: var(--accent-gold-soft);
+}
+
+.nav-map-pill {
+  background: linear-gradient(135deg, rgba(21, 101, 192, 0.12), rgba(19, 111, 83, 0.12));
+  border: 1px solid rgba(21, 101, 192, 0.35);
+  color: #0d47a1 !important;
+}
+
+.nav-quiz-pill {
+  border: 1px solid var(--accent-gold);
+  background-color: rgba(255, 209, 102, 0.22);
+  color: var(--accent-emerald-dark) !important;
+}
+
+/* ==========================================================================
+   B. HERO SECTION & 3D COLORFUL PEDESTALS
+   ========================================================================== */
+.hero-sanctuary {
+  background: linear-gradient(180deg, #f3efe4 0%, var(--bg-marble) 100%);
+  border-bottom: 1px solid var(--border-stone);
+}
+
+/* Aurora Warna Lembut */
+.hero-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.aurora-1 {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, #38bdf8, #10b981);
+  top: -80px;
+  left: -60px;
+}
+
+.aurora-2 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, #f59e0b, #ec4899);
+  bottom: 40px;
+  right: -80px;
+}
+
+.classical-pillar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 54px;
+  opacity: 0.32;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(184, 134, 40, 0.14) 0px,
+    rgba(255, 255, 255, 0.85) 4px,
+    rgba(184, 134, 40, 0.24) 8px,
+    transparent 10px
+  );
+  border-left: 1px solid rgba(184, 134, 40, 0.25);
+  border-right: 1px solid rgba(184, 134, 40, 0.25);
+}
+
+.pillar-left { left: 18px; }
+.pillar-right { right: 18px; }
+
+.classical-overline span {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-emerald);
+  padding: 0.38rem 1.1rem;
+  border: 1px solid var(--border-stone);
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255, 248, 225, 0.9));
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.hero-main-heading {
+  font-weight: 800;
+  background: linear-gradient(135deg, #133529 0%, #1565c0 55%, #9a3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Pedestal Cards */
+.pedestal-wrapper {
+  perspective: 1100px;
+}
+
+.pedestal-card {
+  position: relative;
+  background: linear-gradient(160deg, #ffffff 0%, #f7f4eb 100%);
+  border: 1.5px solid var(--border-stone);
+  border-top: 4px solid var(--scholar-color, var(--accent-gold));
+  border-radius: 14px;
+  padding: 1.15rem 1rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.22s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(18, 36, 41, 0.07);
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.pedestal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 209, 102, 0.32),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pedestal-card:hover::before {
+  opacity: 1;
+}
+
+.pedestal-card:hover {
+  box-shadow: var(--shadow-3d-hover);
+  border-color: var(--scholar-color, var(--accent-gold));
+}
+
+.pedestal-card.active {
+  background: linear-gradient(150deg, var(--scholar-color, #136f53) 0%, #122429 100%);
+  border-color: var(--accent-gold-bright);
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(18, 36, 41, 0.3), 0 0 0 2px var(--accent-gold-bright);
+}
+
+.pedestal-depth-1 { transform: translateZ(14px); }
+.pedestal-depth-2 { transform: translateZ(26px); }
+
+.pedestal-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 2.5px solid var(--scholar-color, var(--accent-gold));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+  background-color: #133529;
+}
+
+.pedestal-card.active .pedestal-avatar {
+  border-color: var(--accent-gold-bright);
+}
+
+.pedestal-number {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--scholar-color, var(--accent-gold));
+}
+
+.pedestal-card.active .pedestal-number {
+  color: var(--accent-gold-bright);
+}
+
+.pedestal-name {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0.45rem 0 0.3rem;
+}
+
+.pedestal-origin {
+  font-size: 0.77rem;
+  color: var(--ink-muted);
+}
+
+.pedestal-card.active .pedestal-origin {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Kartu Monumen Utama Tokoh Aktif */
+.hero-monument-card {
+  position: relative;
+  background: linear-gradient(145deg, #ffffff 0%, #faf8f2 100%);
+  border: 1.5px solid var(--border-stone);
+  border-radius: 18px;
+  box-shadow: var(--shadow-relief);
+}
+
+.pediment-crown {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 12px;
+  background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-bright));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.classical-frame-3d {
+  perspective: 1000px;
+  max-width: 260px;
+}
+
+.frame-inner-depth {
+  background: linear-gradient(160deg, var(--active-scholar-color, #136f53), #0e2429);
+  border: 2.5px solid var(--accent-gold-bright);
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 20px 40px rgba(18, 36, 41, 0.28);
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, background 0.4s ease;
+}
+
+.scholar-photo {
+  width: 164px;
+  height: 164px;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 50%;
+  border: 3px solid var(--accent-gold-bright);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  background-color: #133529;
+  transform: translateZ(24px);
+}
+
+.scholar-crest-placeholder {
+  width: 164px;
+  height: 164px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(24px);
+}
+
+.frame-plaque {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 209, 102, 0.55);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  transform: translateZ(16px);
+}
+
+.plaque-years {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold-bright);
+  letter-spacing: 0.08em;
+}
+
+.badge-classical {
+  background-color: var(--accent-gold-soft);
+  color: var(--accent-emerald-dark);
+  border: 1px solid var(--border-stone);
+  padding: 0.35rem 0.95rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.hero-scholar-title {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+
+.hero-scholar-subtitle {
+  font-family: var(--font-editorial);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.classical-divider-left {
+  width: 84px;
+  height: 3.5px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent-emerald), var(--accent-gold-bright), transparent);
+}
+
+.hero-scholar-summary {
+  color: var(--ink-secondary);
+  font-size: 1.02rem;
+}
+
+/* Tombol Klasik Colorful */
+.btn-classical-primary {
+  background: linear-gradient(135deg, #136f53, #0f5266);
+  color: #ffffff;
+  border: 1.5px solid var(--accent-gold-bright);
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(19, 111, 83, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-classical-primary:hover:not(:disabled) {
+  color: var(--accent-gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(19, 111, 83, 0.35);
+}
+
+.btn-classical-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-classical-outline {
+  background-color: #ffffff;
+  color: var(--ink-primary);
+  border: 1.5px solid var(--accent-gold);
+  font-weight: 600;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-classical-outline:hover {
+  background-color: var(--accent-gold-soft);
+  color: var(--accent-emerald-dark);
+  transform: translateY(-2px);
+}
+
+.btn-vibrant-popup {
+  background: linear-gradient(135deg, #d9534f, #e67e22);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(217, 83, 79, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-vibrant-popup:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(217, 83, 79, 0.38);
+}
+
+/* ==========================================================================
+   NEW SECTION: PETA PELAYARAN 3D & SLIDE VISUAL INTERAKTIF
+   ========================================================================== */
+.section-ocean-atlas {
+  background: radial-gradient(circle at 50% 20%, #143d52 0%, #091e29 100%);
+  border-top: 3px solid var(--accent-gold-bright);
+  border-bottom: 3px solid var(--accent-gold-bright);
+}
+
+.btn-map-mode {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 209, 102, 0.35);
+  border-radius: 50px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-map-mode:hover {
+  background-color: rgba(255, 209, 102, 0.2);
+  color: #ffffff;
+}
+
+.btn-map-mode.active {
+  background: linear-gradient(135deg, #ffd166, #e5a93c);
+  color: #122429;
+  border-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(255, 209, 102, 0.35);
+}
+
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.legend-chip:hover,
+.legend-chip.active {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-gold-bright);
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1.5px solid #ffffff;
+}
+
+/* Kontainer Peta 3D */
+.atlas-3d-perspective {
+  perspective: 1400px;
+  max-width: 960px;
+}
+
+.atlas-3d-board {
+  position: relative;
+  border-radius: 18px;
+  border: 3px solid var(--accent-gold-bright);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55), 0 0 30px rgba(56, 189, 248, 0.2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.22s ease-out;
+  background-color: #082e42;
+}
+
+.atlas-corner-ornament {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--accent-gold-bright);
+  border-style: solid;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.atlas-corner-ornament.top-left { top: 8px; left: 8px; border-width: 3px 0 0 3px; }
+.atlas-corner-ornament.top-right { top: 8px; right: 8px; border-width: 3px 3px 0 0; }
+.atlas-corner-ornament.bottom-left { bottom: 8px; left: 8px; border-width: 0 0 3px 3px; }
+.atlas-corner-ornament.bottom-right { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; }
+
+/* Animasi SVG pada Peta */
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.animated-route-line {
+  stroke-dasharray: 10 6;
+  animation: dashFlow 1.6s linear infinite;
+}
+
+@keyframes shipBobbing {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-4px) rotate(2.5deg); }
+}
+
+.ship-bobbing-anim {
+  animation: shipBobbing 2.2s ease-in-out infinite;
+}
+
+.voyage-ship-transition {
+  transition: transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(2.3); opacity: 0; }
+}
+
+.city-pin-group {
+  cursor: pointer;
+}
+
+.city-pin-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseRing 2s ease-out infinite;
+}
+
+.city-pin-core {
+  transition: transform 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.city-pin-group:hover .city-pin-core {
+  transform: scale(1.35);
+}
+
+.map-hover-tooltip {
+  position: absolute;
+  z-index: 15;
+  background: rgba(15, 36, 44, 0.94);
+  color: #ffffff;
+  border: 1.5px solid var(--accent-gold-bright);
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  pointer-events: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -125%);
+}
+
+/* Kartu Slide Visual di Bawah Peta */
+.voyage-slide-card {
+  background: linear-gradient(155deg, #ffffff 0%, #f8f5ec 100%);
+  border: 2px solid var(--accent-gold-bright);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.32);
+  transition: transform 0.28s ease, opacity 0.25s ease;
+}
+
+.voyage-slide-card.slide-animating {
+  opacity: 0.35;
+  transform: scale(0.985);
+}
+
+.slide-illustration-box {
+  width: 170px;
+  height: 170px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #0f4c64, #136f53);
+  border: 2.5px solid var(--accent-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 26px rgba(15, 76, 100, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.slide-illustration-box:hover {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+.slide-dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cbd5e1;
+  padding: 0;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.slide-dot-btn.active {
+  width: 30px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #136f53, #e67e22);
+}
+
+/* Pop-up Modal 3D */
+.classical-popup-3d {
+  background: linear-gradient(160deg, #ffffff 0%, #faf7ef 100%);
+  border: 2.5px solid var(--accent-gold-bright) !important;
+  border-radius: 20px;
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.45);
+}
+
+.popup-svg-showcase {
+  width: 150px;
+  height: 150px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #122429, #1565c0);
+  border: 2px solid var(--accent-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(21, 101, 192, 0.25);
+}
+
+/* ==========================================================================
+   STRIP INDIKATOR TOKOH AKTIF
+   ========================================================================== */
+.active-banner-strip {
+  background-color: #ffffff;
+  border-color: var(--border-stone) !important;
+  position: sticky;
+  top: 63px;
+  z-index: 1015;
+}
+
+/* ==========================================================================
+   TRANSISI PANGGUNG 3D SAAT GANTI ULAMA
+   ========================================================================== */
+#archive-dynamic-stage {
+  transform-origin: top center;
+  transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#archive-dynamic-stage.stage-switching {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(3deg) translateY(16px);
+}
+
+/* ==========================================================================
+   SECTIONS & EDITORIAL HEADERS
+   ========================================================================== */
+.section-marble {
+  background-color: var(--bg-marble);
+}
+
+.section-travertine {
+  background-color: var(--bg-travertine);
+  border-top: 1px solid rgba(184, 134, 40, 0.2);
+  border-bottom: 1px solid rgba(184, 134, 40, 0.2);
+}
+
+.section-kicker {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  margin-bottom: 0.35rem;
+}
+
+.section-title {
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.classical-divider {
+  width: 96px;
+  height: 3.5px;
+  margin-top: 0.85rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, transparent, #136f53, #ffd166, #d9534f, transparent);
+}
+
+/* ==========================================================================
+   C. PROFIL SINGKAT (COLORFUL STONE TABLETS)
+   ========================================================================== */
+.stone-tablet {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-stone);
+  border-top: 4px solid var(--tablet-accent, var(--accent-gold));
+  border-radius: 12px;
+  padding: 1.35rem;
+  height: 100%;
+  box-shadow: var(--shadow-relief);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stone-tablet:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 34px rgba(18, 36, 41, 0.13);
+}
+
+.tablet-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tablet-accent, var(--accent-gold));
+  margin-bottom: 0.35rem;
+}
+
+.tablet-value {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   D. TIMELINE PERJALANAN HIDUP
+   ========================================================================== */
+.classical-timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: 2.25rem;
+}
+
+.classical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 11px;
+  width: 3px;
+  background: linear-gradient(180deg, #136f53, #1565c0, #d9534f, #e67e22);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.timeline-node:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2.25rem;
+  top: 1.25rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd166, #e67e22);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #136f53;
+  z-index: 2;
+}
+
+.timeline-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-stone);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-relief);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateX(6px);
+  border-color: var(--accent-emerald);
+}
+
+.timeline-phase {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #136f53, #1565c0);
+  padding: 0.25rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 0.55rem;
+}
+
+.timeline-heading {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.45rem;
+}
+
+/* ==========================================================================
+   E. KARYA DAN PEMIKIRAN
+   ========================================================================== */
+.archive-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-stone);
+  border-radius: 14px;
+  box-shadow: var(--shadow-relief);
+}
+
+.panel-heading {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-stone);
+}
+
+.kitab-item {
+  padding: 0.95rem 1.1rem;
+  background-color: #fbfaf7;
+  border-left: 4px solid #1565c0;
+  border-radius: 0 10px 10px 0;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.kitab-item:hover {
+  transform: translateX(4px);
+  background-color: #f0f6fc;
+}
+
+.kitab-title {
+  font-family: var(--font-editorial);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.2rem;
+}
+
+.thought-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-stone);
+  border-radius: 12px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow-relief);
+}
+
+/* ==========================================================================
+   F. KONTRIBUSI & G. KETELADANAN
+   ========================================================================== */
+.pillar-contribution-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-stone);
+  border-radius: 14px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: var(--shadow-relief);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-contribution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-3d-hover);
+}
+
+.pillar-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #136f53, #1565c0);
+  color: #ffd166;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 14px rgba(21, 101, 192, 0.22);
+}
+
+.virtue-card {
+  background: linear-gradient(160deg, #ffffff 0%, #f8f5ed 100%);
+  border: 1px solid var(--border-stone);
+  border-radius: 14px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: var(--shadow-relief);
+}
+
+.virtue-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #d9534f, #e67e22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   H. REFERENSI & J. KUIS
+   ========================================================================== */
+.bibliography-list {
+  padding-left: 1.25rem;
+}
+
+.bibliography-list li {
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed rgba(184, 134, 40, 0.35);
+  color: var(--ink-secondary);
+  font-size: 0.95rem;
+}
+
+.bibliography-list li:last-child {
+  border-bottom: none;
+}
+
+.quiz-sanctuary-wrapper { perspective: 1200px; }
+
+.quiz-monument-card {
+  background: linear-gradient(155deg, #ffffff 0%, #faf8f2 100%);
+  border: 1.5px solid var(--border-stone);
+  border-radius: 16px;
+  box-shadow: var(--shadow-relief);
+  transform-style: preserve-3d;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.quiz-monument-card.quiz-card-flip {
+  opacity: 0.15;
+  transform: rotateY(8deg) scale(0.985);
+}
+
+.quiz-emblem-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #136f53, #1565c0);
+  color: var(--accent-gold-bright);
+  border: 2px solid var(--accent-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 10px 24px rgba(19, 111, 83, 0.25);
+}
+
+.quiz-stat-box {
+  background-color: #f8f6f0;
+  border: 1px solid var(--border-stone);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.quiz-progress-track {
+  height: 8px;
+  background-color: #e6e0d2;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.quiz-progress-track .progress-bar {
+  background: linear-gradient(90deg, #136f53, #1565c0, #ffd166);
+  transition: width 0.35s ease;
+}
+
+.quiz-question-heading {
+  font-family: var(--font-body);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--ink-primary);
+}
+
+.quiz-option-btn {
+  width: 100%;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid var(--border-stone);
+  border-radius: 10px;
+  padding: 0.95rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  box-shadow: 0 4px 12px rgba(23, 33, 30, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  transform: translateY(-2px) translateX(3px);
+  border-color: #1565c0;
+  background-color: #f4f8fd;
+}
+
+.quiz-option-letter {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: var(--accent-gold-soft);
+  color: var(--accent-emerald-dark);
+  border: 1px solid var(--border-stone);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-option-btn.option-correct {
+  background-color: #e8f5ee;
+  border-color: #198754;
+  color: #0f4c2e;
+  font-weight: 600;
+}
+
+.quiz-option-btn.option-correct .quiz-option-letter {
+  background-color: #198754;
+  color: #ffffff;
+  border-color: #198754;
+}
+
+.quiz-option-btn.option-wrong {
+  background-color: #fdf0f0;
+  border-color: #dc3545;
+  color: #7c1922;
+}
+
+.quiz-option-btn.option-wrong .quiz-option-letter {
+  background-color: #dc3545;
+  color: #ffffff;
+  border-color: #dc3545;
+}
+
+.quiz-feedback-panel {
+  background-color: #f6f3ea;
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.2rem;
+}
+
+.quiz-feedback-panel.feedback-is-correct {
+  background-color: #eef7f2;
+  border-left-color: #198754;
+}
+
+.quiz-feedback-panel.feedback-is-wrong {
+  background-color: #fdf3f3;
+  border-left-color: #dc3545;
+}
+
+.quiz-score-medallion {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: linear-gradient(155deg, #136f53 0%, #1565c0 100%);
+  border: 3px solid var(--accent-gold-bright);
+  box-shadow: 0 16px 32px rgba(19, 111, 83, 0.28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-score-medallion .score-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.quiz-score-medallion .score-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold-bright);
+  margin-top: 0.3rem;
+}
+
+.review-item-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-stone);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+}
+
+/* ==========================================================================
+   I. FOOTER
+   ========================================================================== */
+.classical-footer {
+  background: linear-gradient(180deg, #10252b 0%, #09161a 100%);
+  color: #e8e4da;
+  border-top: 3px solid var(--accent-gold-bright);
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent-gold-bright);
+  letter-spacing: 0.08em;
+}
+
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+  color: rgba(232, 228, 218, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold-bright);
+  padding-left: 4px;
+}
+
+.footer-badge {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 209, 102, 0.35);
+  color: #f3efe6;
+}
+
+/* ==========================================================================
+   ANIMASI SCROLL-REVEAL 3D
+   ========================================================================== */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(10deg) translateY(28px);
+  transition: opacity 0.6s ease-out, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-3d.is-visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-3d,
+  .pedestal-card,
+  .frame-inner-depth,
+  #archive-dynamic-stage,
+  .quiz-monument-card,
+  .atlas-3d-board,
+  .voyage-ship-transition,
+  .ship-bobbing-anim {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .classical-timeline {
+    padding-left: 1.75rem;
+  }
+  .timeline-marker {
+    left: -1.75rem;
+    width: 20px;
+    height: 20px;
+  }
+  .active-banner-strip {
+    top: 57px;
+  }
+}
